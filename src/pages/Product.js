@@ -125,7 +125,7 @@ const Product = () => {
     const id = location.pathname.split("/")[2];
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
-    const [color, setColor] = useState("");
+    //const [color, setColor] = useState("");
     const [size, setSize] = useState("");
     const dispatch = useDispatch();
 
@@ -152,15 +152,15 @@ const Product = () => {
         }
     } 
 
-    const handleColor = (e) => {
+    // const handleColor = (e) => {
 
-        const value = e.target.value;
-        setColor({
-            ...color,
-            [e.target.name]: value, 
-        });
+    //     const value = e.target.value;
+    //     setColor({
+    //         ...color,
+    //         [e.target.name]: value, 
+    //     });
 
-    };
+    // };
 
     const handleSize = (e) => {
         const value = e.target.value;
