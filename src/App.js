@@ -26,9 +26,9 @@ const App = () => {
 
   return <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route path="https://scintillating-froyo-086d53.netlify.app/" element={<Home />} />
                         <Route path="*" element={<Home />} />
-                        <Route path="/*" element={<Home />} />
+                        <Route path="https://scintillating-froyo-086d53.netlify.app/*" element={<Home />} />
                         <Route path="/products/:category" element={<ProductList />}/>
                         <Route path="/product/:id" element={<Product/>}/>
                         <Route path="/cart" element={<Cart/>}/>
