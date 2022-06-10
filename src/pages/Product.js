@@ -126,9 +126,10 @@ const Product = () => {
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
     //const [color, setColor] = useState("");
-    const [size, setSize] = useState("");
+    let [size, setSize] = useState([]);
     const dispatch = useDispatch();
-
+    // const newSize = {size:[]};
+   
 
 
     useEffect(() => {
@@ -141,8 +142,9 @@ const Product = () => {
             }
         };
         getProduct(); 
-     },[id])
+     },[id,size])
 
+     console.log(size);
 
     const handleQuantity = (type) => {
         if (type === "dec") {
@@ -163,18 +165,17 @@ const Product = () => {
     // };
 
     const handleSize = (e) => {
-        const value = e.target.value;
+        let value = [e.target.value];
         setSize(value);
     };
  
+    console.log("taille :" + size);
+
     const handleClick = () => {
-        product.size=size
-        dispatch(
-            addProduct({ ...product ,  quantity })
-        )
+        product.size = size;
+        dispatch( addProduct({ ...product , quantity })) ;
+
     }
-
-
 
 
     return (
@@ -203,7 +204,7 @@ const Product = () => {
                                 <FilterSize name="" key={product.size} onChange={handleSize}>
                                 
                                     { 
-                                        product.size?.map((s) => 
+                                        product.size?.map((s) =>
                                                 <FilterSizeOption key={s} onClick={handleSize}>{s}</FilterSizeOption>
                                         )
                                     }
