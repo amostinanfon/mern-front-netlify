@@ -73,6 +73,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 15px;
+  text-decoration: none;
   ${mobile({fontSize:"10px", marginLeft:"10px"})}
 
 `
@@ -105,13 +106,13 @@ const Navbar = () => {
             <Search style={{color:'gray', fontSize:'16px'}} />
           </SearchContainer>
         </Left>
-        <Center><Logo>AMOS ET JOE PEPE</Logo></Center>
+        <Center><Logo>AMOS</Logo></Center>
         <Right>
-          <Link to="/register">
-            <MenuItem>CREER UN COMPTE</MenuItem>
+          <Link to="/register" style={{textDecoration:"none"}}>
+            <MenuItem>CREER</MenuItem>
           </Link>
-          <Link to="/login">
-            <MenuItem>SIGN IN</MenuItem>
+          <Link to="/login" style={{textDecoration:"none"}}>
+            <MenuItem>LOGIN</MenuItem>
           </Link>
           <RemoveContainer>
             <ArrowDownwardOutlined onClick={removeCart} style={{cursor:"pointer", color:"blue"}}/>
