@@ -105,10 +105,14 @@ const Navbar = () => {
             <Search style={{color:'gray', fontSize:'16px'}} />
           </SearchContainer>
         </Left>
-        <Center><Logo>AMOS</Logo></Center>
+        <Center><Logo>AMOS ET JOE PEPE</Logo></Center>
         <Right>
-          <MenuItem>ENREGISTRER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <Link to="/register">
+            <MenuItem>CREER UN COMPTE</MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
           <RemoveContainer>
             <ArrowDownwardOutlined onClick={removeCart} style={{cursor:"pointer", color:"blue"}}/>
           </RemoveContainer>

@@ -144,7 +144,6 @@ const Product = () => {
         getProduct(); 
      },[id,size])
 
-     console.log(size);
 
     const handleQuantity = (type) => {
         if (type === "dec") {
