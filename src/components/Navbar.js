@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { removeProduct } from "../redux/cartRedux";
+import { logoutUser } from "../redux/userRedux";
 
 
 const Container = styled.div`
@@ -86,6 +87,8 @@ const RemoveContainer = styled.div`
 const Navbar = () => {
 
   const quantity = useSelector(state => state.cart.quantity);
+  const stateUser = useSelector(state => state.user)
+
   const dispatch = useDispatch();
 
 
@@ -94,6 +97,10 @@ const Navbar = () => {
         dispatch(
             removeProduct({ quantity })
         )
+    }
+
+    const logOut = () => {
+      dispatch(logoutUser(stateUser))
     }
 
   return (
@@ -113,6 +120,15 @@ const Navbar = () => {
           </Link>
           <Link to="/login" style={{textDecoration:"none"}}>
             <MenuItem>LOGIN</MenuItem>
+          </Link>
+          <Link 
+            to="/login" 
+            style={{textDecoration:"none"}}
+            onClick={logOut}
+          >
+            <MenuItem>
+              LOGOUT
+            </MenuItem>
           </Link>
           <RemoveContainer>
             <ArrowDownwardOutlined onClick={removeCart} style={{cursor:"pointer", color:"blue"}}/>
