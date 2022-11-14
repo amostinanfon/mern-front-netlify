@@ -87,7 +87,8 @@ const RemoveContainer = styled.div`
 const Navbar = () => {
 
   const quantity = useSelector(state => state.cart.quantity);
-  const stateUser = useSelector(state => state.user)
+  const stateUser = useSelector(state => state.user.currentUser?.username)
+  console.log('stateUser :'+ stateUser);
 
   const dispatch = useDispatch();
 
@@ -113,7 +114,7 @@ const Navbar = () => {
             <Search style={{color:'gray', fontSize:'16px'}} />
           </SearchContainer>
         </Left>
-        <Center><Logo>AMOS</Logo></Center>
+        <Center><Logo>Hi {stateUser}</Logo></Center>
         <Right>
           <Link to="/register" style={{textDecoration:"none"}}>
             <MenuItem>CREER</MenuItem>
